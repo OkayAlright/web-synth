@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../Skeleton-2.0.4/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../Skeleton-2.0.4/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="synth.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Web Synth:</h1>
+            <hr id="ruler"></hr>
+        </div>
+        <div class="row">
+            <div class="one-half column">
+                <canvas class="visual" width="960px" height="300px"></canvis>
+            </div>
+        </div>
+        <hr></hr>
+        <div class="row">
+            <div class="column">
+                <div class="three columns">
+                    <h5> Oscillator 1: </h5>
+                    <button onclick="changeWave('sine',osc1)"> Sine Wave  &nbsp; &nbsp; &nbsp; &nbsp;</button>
+                    <button onclick="changeWave('sawtooth',osc1)"> Saw Wave &nbsp; &nbsp; &nbsp; &nbsp;</button>
+                    <button onclick="changeWave('square',osc1)"> Square Wave &nbsp;</button>
+                    <button onclick="changeWave('triangle',osc1)"> Triangle Wave</button>
+                </div>
+                <div class="nine columns">
+                    <h5>Gain:</h5>
+		    <input type="range" min="0" max="200" value="50" oninput="changeGain(this.value, gainNode1)"></input>
+                    <h5>Pitch:</h5>
+                    <input type="range" min="0" max="4096" value="440" oninput="changePitch(this.value, osc1)"></input>
+                </div>
+            </div>
+        </div>
+        <hr></hr>
+        <div class="row">
+            <div class="column">
+                <div class="three columns">
+                    <h5> Oscillator 2: </h5>
+                    <button onclick="changeWave('sine',osc2)"> Sine Wave  &nbsp; &nbsp; &nbsp; &nbsp;</button>
+                    <button onclick="changeWave('sawtooth',osc2)"> Saw Wave &nbsp; &nbsp; &nbsp; &nbsp;</button>
+                    <button onclick="changeWave('square',osc2)"> Square Wave &nbsp;</button>
+                    <button onclick="changeWave('triangle',osc2)"> Triangle Wave</button>
+                </div>
+                <div class="nine columns">
+                    <h5>Gain:</h5>
+                    <input type="range" min="0" max="200" value="25" oninput="changeGain(this.value, gainNode2)"></input>
+                    <h5>Pitch:</h5>
+                    <input type="range" min="0" max="4096" value="880" oninput="changePitch(this.value, osc2)"></input>
+                </div>
+            </div>
+        </div>
+        <hr></hr>
+        <div class="row">
+            <div class="column">
+                <div class="three columns">
+                    <h5> Oscillator 3: </h5>
+                    <button onclick="changeWave('sine',osc3)"> Sine Wave  &nbsp; &nbsp; &nbsp; &nbsp;</button>
+                    <button onclick="changeWave('sawtooth',osc3)"> Saw Wave &nbsp; &nbsp; &nbsp; &nbsp;</button>
+                    <button onclick="changeWave('square',osc3)"> Square Wave &nbsp;</button>
+                    <button onclick="changeWave('triangle',osc3)"> Triangle Wave</button>
+                </div> 
+                <div class="nine columns">
+                    <h5>Gain:</h5>
+                    <input type="range" min="0" max="200" value="100" oninput="changeGain(this.value, gainNode3)"></input>
+                    <h5>Pitch:</h5>
+                    <input type="range" min="0" max="4096" value="220" oninput="changePitch(this.value, osc3)"></input>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <hr></hr>
+            <h3> Explanation: </h3>
+            This web page is a demo/experiment to play around with the Web Audio API.
+            Consider this a "V0.2.0". You can only control waveform, gain and pitch.
+            Hopefully I (may) add filters, and modulators, in
+            the near future. Better mobile compatibility will also be a goal.
+            <p>Contact me at ldavis@marlboro.edu or <a href="https://github.com/SafeCamp">check out my repo.</a></p>
+            <p> Changes in V0.2.0: Added two more oscillators.</p>
+            <hr></hr>
+            <h5>Resources:</h5>
+            <p>Code for the visualizer was taken from 
+            <a href="https://github.com/mdn/voice-change-o-matic/blob/gh-pages/scripts/app.js#L123-L167"> 
+            here.</a></p>
+            <p>Styling for the sliders was retrofitted from
+            <a href="http://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html">
+            here.</a></p>
+            <p>All other styling was done using Skeleton CSS, which can be downloaded <a href="http://getskeleton.com/">here.</a></p>
+        </div>
+    </div>
+    <script src="synth.js"></script>
+</body>
+
